@@ -240,4 +240,27 @@ if(localStorage.sc)document.body.classList.add('col');
 $('#fm').innerHTML=[['🧾 فاتورة مبيع',"inv('i')"],['🛒 فاتورة شراء',"inv('b')"],['⬇ سند قبض',"vf('in')"],['⬆ سند صرف',"vf('out')"],['📦 صنف جديد',"pf()"],['💸 مصروف',"ef()"]].map(([l,a])=>`<button class="b g" onclick="fab(0);${a}">${l}</button>`).join('');
 go('dash');off=0;initFB();lock();
 (()=>{const e=$('#pc'),M=['تجهيز الحسابات…','تحميل المخزون…','مزامنة الفواتير…','جاهز ✓'],s0=performance.now();(function t(n){const k=Math.min((n-s0)/2600,1);e.textContent=M[Math.min(3,k*4|0)]+'  '+Math.round(k*100)+'%';k<1&&requestAnimationFrame(t)})(s0)})();
+ <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDhYn2zUFVX3DD7B7-ntp0Gspv_PN-RbIU",
+    authDomain: "alameen-mbj.firebaseapp.com",
+    projectId: "alameen-mbj",
+    storageBucket: "alameen-mbj.firebasestorage.app",
+    messagingSenderId: "587399748810",
+    appId: "1:587399748810:web:f49f43b0bcba3edf1a6833",
+    measurementId: "G-67FBXE1EYR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </script></body></html>
