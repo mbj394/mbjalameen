@@ -240,4 +240,5 @@ if(localStorage.sc)document.body.classList.add('col');
 $('#fm').innerHTML=[['🧾 فاتورة مبيع',"inv('i')"],['🛒 فاتورة شراء',"inv('b')"],['⬇ سند قبض',"vf('in')"],['⬆ سند صرف',"vf('out')"],['📦 صنف جديد',"pf()"],['💸 مصروف',"ef()"]].map(([l,a])=>`<button class="b g" onclick="fab(0);${a}">${l}</button>`).join('');
 go('dash');off=0;initFB();lock();
 (()=>{const e=$('#pc'),M=['تجهيز الحسابات…','تحميل المخزون…','مزامنة الفواتير…','جاهز ✓'],s0=performance.now();(function t(n){const k=Math.min((n-s0)/2600,1);e.textContent=M[Math.min(3,k*4|0)]+'  '+Math.round(k*100)+'%';k<1&&requestAnimationFrame(t)})(s0)})();
-</script></body></html>
+</script>
+</body></html>
