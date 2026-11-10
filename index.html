@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الأمين برو – المحاسبة والمخزون</title>
+<script>document.documentElement.dataset.theme=localStorage.th||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')</script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--bg:#0a0f1e;--cd:#121a2f;--tx:#eef2ff;--mu:#8a96b8;--br:#7c6cff;--mt:#2dd4bf;--no:#fb7185;--wn:#fbbf24;--bd:#222d4a;--sb:#0d1427cc;--c1:#16203a;--c2:#111a30;--in:#0a1226;--md:#131c33;--g:#222d4a;color-scheme:dark}
+:root[data-theme=light]{--bg:#f1f4fb;--cd:#fff;--tx:#161c3a;--mu:#5b648f;--br:#6355f0;--mt:#0d9488;--no:#e11d48;--wn:#b45309;--bd:#dbe0f2;--sb:#ffffffd9;--c1:#fff;--c2:#f7f9ff;--in:#f3f5fc;--md:#fff;--g:#e6e9f8;color-scheme:light}
+body,.card,aside,.md{transition:background-color .3s,color .3s,border-color .3s}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;background:radial-gradient(900px 500px at 85% -10%,#7c6cff33,transparent),radial-gradient(700px 400px at 0 100%,#22d3ee1f,transparent),var(--bg);background-attachment:fixed;color:var(--tx);display:flex;min-height:100vh}
+button{font:inherit;cursor:pointer}
+#splash{position:fixed;inset:0;z-index:99;display:grid;place-items:center;text-align:center;overflow:hidden;animation:out .01s 3.95s forwards}
+#splash::before,#splash::after{content:"";position:absolute;left:0;right:0;height:50.5%;background:#0a0f1e;z-index:0;animation:cut .8s 3.1s cubic-bezier(.7,0,.2,1) forwards}
+#splash::before{top:0;--d:-101%}#splash::after{bottom:0;--d:101%}
+.sp-in{position:relative;z-index:2;animation:fo .4s 2.7s forwards}
+.o{position:absolute;border-radius:50%;filter:blur(70px);z-index:1;opacity:.55;animation:fl 6s ease-in-out infinite alternate,fd .4s 2.7s forwards}
+.o1{width:380px;height:380px;background:#7c6cff;top:-90px;right:-80px}.o2{width:340px;height:340px;background:#22d3ee;bottom:-90px;left:-70px;animation-delay:-3s,2.7s}
+.fsw{position:absolute;inset:0;z-index:1;pointer-events:none;animation:fd .4s 2.7s forwards}
+.fsw span{position:absolute;bottom:8%;font-size:34px;font-weight:700;color:#fff;opacity:0;animation:dr 4.2s linear infinite}
+.mk{display:block;margin:0 auto 18px;filter:drop-shadow(0 0 22px #7c6cff99)}
+.rr{stroke-dasharray:420;stroke-dashoffset:420;animation:dr2 1.1s .2s ease forwards}
+.br{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:rise .6s cubic-bezier(.2,1.4,.4,1) forwards}
+.b1{animation-delay:.9s}.b2{animation-delay:1.05s}.b3{animation-delay:1.2s}
+.tr{stroke-dasharray:140;stroke-dashoffset:140;animation:dr2 .8s 1.5s ease forwards}
+.logo{font-size:58px;font-weight:700;opacity:0;animation:lg 1s 1.7s cubic-bezier(.2,.9,.3,1) forwards}.logo span{background:linear-gradient(90deg,#a99cff,var(--mt));-webkit-background-clip:text;background-clip:text;color:transparent}
+#splash p{color:var(--mu);margin:8px 0 22px;animation:up .8s 2.1s both}#pc{display:block;margin-top:10px;color:var(--mu);font-size:13px;min-height:20px}
+.bar{width:240px;height:4px;border-radius:4px;background:#fff2;margin:auto;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--br),var(--mt));animation:ld 2.6s linear}
+aside{width:232px;background:var(--sb);backdrop-filter:blur(10px);padding:18px 12px;display:flex;flex-direction:column;gap:8px;border-left:1px solid var(--bd);position:sticky;top:0;height:100vh}
+aside h1{font-size:20px;text-align:center;margin-bottom:10px;background:linear-gradient(90deg,#a99cff,var(--mt));-webkit-background-clip:text;background-clip:text;color:transparent}
+#nav{display:flex;flex-direction:column;gap:4px;flex:1}
+#nav button{animation:sl .5s both;background:none;border:0;color:var(--mu);text-align:right;padding:11px 14px;border-radius:10px;transition:.25s}
+#nav button:hover{background:#7c6cff1a;color:var(--tx);padding-right:20px}
+#nav .on{background:linear-gradient(270deg,#7c6cff40,transparent);color:var(--tx);box-shadow:inset -3px 0 var(--mt)}
+main{flex:1;padding:22px 22px 90px;min-width:0}
+h2{font-size:22px}h3{margin-bottom:10px}
+.top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap}.top input{max-width:240px;flex:1}
+input,select{width:100%;background:var(--in);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:9px;font:inherit;transition:.2s}
+input:focus,select:focus{outline:0;border-color:var(--br);box-shadow:0 0 0 3px #7c6cff33}button:focus-visible{outline:2px solid var(--mt)}
+label{display:block;margin:10px 0 4px;color:var(--mu);font-size:13px}
+.b{background:linear-gradient(135deg,#7c6cff,#9a5cff);color:#fff;font-weight:600;border:0;border-radius:10px;padding:9px 16px;transition:.2s;box-shadow:0 6px 18px #7c6cff40}.b:hover{transform:translateY(-2px)}.b:active{transform:scale(.96)}
+.b.g{background:var(--g);color:var(--tx);box-shadow:none}.b.rd{background:linear-gradient(135deg,#fb7185,#e11d48);box-shadow:none}
+.ic{background:none;border:0;font-size:16px;color:var(--tx);transition:.15s}.ic:hover{transform:scale(1.3)}
+.card{background:linear-gradient(160deg,var(--c1),var(--c2));border:1px solid var(--bd);border-radius:16px;padding:16px;margin-bottom:14px;animation:up .5s both}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:14px}.grid .card{margin:0}
+.st{cursor:pointer;transition:.25s}.st:hover{transform:translateY(-4px);border-color:var(--c)}
+.st span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--c) 20%,transparent);margin-bottom:8px;font-size:20px}.st small{display:block;color:var(--mu)}.st b{font-size:22px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{padding:10px;text-align:right;border-bottom:1px solid var(--bd);white-space:nowrap}th{color:var(--mu);font-weight:500}tr:hover td{background:#7c6cff12}
+.em{text-align:center;color:var(--mu)}.tg{padding:3px 10px;border-radius:20px;font-size:12px}.tg.ok{background:#2dd4bf22;color:var(--mt)}.tg.wn{background:#fbbf2422;color:var(--wn)}.tg.no{background:#fb718522;color:var(--no)}
+.ch{display:flex;gap:10px;height:170px}.ch>div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px}.ch i{width:100%;min-height:3px;background:linear-gradient(var(--mt),var(--br));border-radius:6px 6px 0 0;transform-origin:bottom;animation:gr .9s both;transition:.2s}.ch i:hover{filter:brightness(1.4)}.ch small{color:var(--mu);font-size:11px}
+.ov,.lk{position:fixed;inset:0;background:#000b;display:grid;place-items:center;z-index:50;animation:fi .2s}.lk{background:var(--bg);z-index:98}
+.md{background:var(--md);border:1px solid var(--bd);padding:20px;border-radius:18px;width:min(600px,94vw);max-height:90vh;overflow:auto;animation:pop2 .3s}
+.row{display:flex;gap:8px;margin:8px 0}.row>*{flex:1}.row .ic{flex:none}.tot{margin:12px 0;font-size:16px;line-height:1.9}.tot b{color:var(--mt);font-size:19px}
+.ts{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--md);color:var(--tx);border:1px solid var(--mt);padding:12px 22px;border-radius:12px;z-index:200;animation:up .3s;box-shadow:0 10px 30px #0008}.ts.er{border-color:var(--no)}
+@keyframes out{to{visibility:hidden}}@keyframes ld{from{width:0}}@keyframes cut{to{transform:translateY(var(--d))}}@keyframes fo{to{opacity:0;transform:scale(1.15);filter:blur(6px)}}@keyframes fd{to{opacity:0}}@keyframes fl{to{transform:translate(40px,30px) scale(1.15)}}
+@keyframes dr{0%{transform:translateY(40px);opacity:0}25%{opacity:.22}100%{transform:translateY(-320px);opacity:0}}@keyframes dr2{to{stroke-dashoffset:0}}@keyframes rise{to{transform:scaleY(1)}}@keyframes lg{from{opacity:0;transform:translateY(24px);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}@keyframes sl{from{opacity:0;transform:translateX(40px)}}@keyframes gr{from{transform:scaleY(0)}}
+@keyframes fi{from{opacity:0}}@keyframes pop2{from{opacity:0;transform:scale(.9)}}
+.ah{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:10px}.ah h1{margin:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#nav button{display:flex;gap:10px;align-items:center;white-space:nowrap}#tb,#sh{display:none}
+.seg{display:inline-flex;background:var(--g);border-radius:12px;padding:4px;gap:4px;margin-bottom:14px;flex-wrap:wrap}.seg button{border:0;background:none;color:var(--mu);padding:8px 16px;border-radius:9px;transition:.2s}.seg .on{background:var(--br);color:#fff;box-shadow:0 4px 12px #7c6cff44}
+#fab{pointer-events:none;position:fixed;bottom:22px;left:22px;z-index:45;display:flex;flex-direction:column;align-items:flex-start}
+#fb{pointer-events:auto;width:56px;height:56px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--br),#9a5cff);color:#fff;font-size:30px;box-shadow:0 10px 26px #7c6cff66;transition:transform .3s}.open #fb{transform:rotate(135deg)}
+#fm{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(12px);transition:.25s}.open #fm{opacity:1;pointer-events:auto;transform:none}#fm .b{box-shadow:0 6px 18px #0004;text-align:right}
+@media(min-width:801px){aside{transition:width .3s}body.col aside{width:72px;align-items:center}body.col .lb,body.col #bn,body.col #sy,body.col #lo{display:none!important}body.col .ah{justify-content:center}}
+@media(max-width:800px){body{flex-direction:column}aside{position:fixed;top:0;bottom:0;right:0;width:260px;height:100%;z-index:60;transform:translateX(105%);overflow-y:auto;transition:transform .3s}body.mo aside{transform:none}#sh{position:fixed;inset:0;background:#0009;z-index:55}body.mo #sh{display:block}#tb{display:flex;position:sticky;top:0;z-index:40;align-items:center;gap:10px;padding:10px 14px;background:var(--sb);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}#tb b{flex:1}#cb{display:none}main{padding:14px 14px 90px}}
+@media print{body>*:not(.ov){display:none!important}.ov{position:static;background:#fff}.md{border:0;background:#fff;color:#000;max-height:none;width:100%}.md *{color:#000!important;background:none!important}th,td{border:1px solid #999}.noprint{display:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important}}
+</style></head><body>
+<div id="splash"><i class="o o1"></i><i class="o o2"></i>
+<div class="fsw"><span style="left:8%;animation-delay:.2s">$</span><span style="left:22%;animation-delay:1.4s;font-size:26px">٪</span><span style="left:38%;animation-delay:.8s">ل.س</span><span style="left:56%;animation-delay:1.9s;font-size:26px">1,250</span><span style="left:74%;animation-delay:.5s;font-size:30px">+</span><span style="left:90%;animation-delay:1.2s;font-size:28px">=</span></div>
+<div class="sp-in"><svg class="mk" viewBox="0 0 120 120" width="120" height="120"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c6cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient></defs><rect class="rr" x="6" y="6" width="108" height="108" rx="30" fill="none" stroke="url(#gg)" stroke-width="4"/><rect class="br b1" x="30" y="62" width="14" height="30" rx="4" fill="url(#gg)"/><rect class="br b2" x="53" y="46" width="14" height="46" rx="4" fill="url(#gg)"/><rect class="br b3" x="76" y="28" width="14" height="64" rx="4" fill="url(#gg)"/><path class="tr" d="M26 52 L50 38 L66 44 L96 20" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="logo">الأمين <span>برو</span></div><p>نظام المحاسبة والمخزون المتكامل</p><div class="bar"><i></i></div><small id="pc"></small></div></div>
+<header id="tb"><button class="ic" onclick="mn()">☰</button><b id="pt2"></b><button class="ic" onclick="tg()">🌓</button></header><div id="sh" onclick="mn(0)"></div>
+<aside><div class="ah"><h1 id="bn"></h1><button class="ic" id="cb" onclick="cl()" title="تصغير / توسيع القائمة">⇆</button></div><div id="nav"></div><div id="sy" class="tg" style="display:none;text-align:center"></div><button class="b g" onclick="tg()" title="تبديل المظهر">🌓 <span class="lb">المظهر</span></button><button id="lo" class="b g" style="display:none" onclick="lout()">تسجيل الخروج</button></aside><main id="main"></main>
+<div id="fab"><div id="fm"></div><button id="fb" onclick="fab()" title="إضافة سريعة">＋</button></div>
+<script>
+/* ===== Firebase =====
+ 1) عبّي البيانات أدناه (Project settings > Your apps)
+ 2) Authentication > Sign-in method: فعّل Email/Password، ثم Users > Add user لكل موظف، وانسخ UID كل مستخدم
+ 3) Firestore > Rules: الصق القواعد التالية وبدّل UID1 و UID2 بالمعرّفات الحقيقية ثم Publish (لا تنتهي بعد 30 يوم):
+ rules_version = '2';
+ service cloud.firestore { match /databases/{db}/documents { match /erp/{d} { allow read, write: if request.auth != null && request.auth.uid in ['UID1','UID2']; } } }
+*/
+const FB={apiKey:'',authDomain:'',projectId:'',appId:''};
+
+const $=s=>document.querySelector(s),uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+esc=s=>String(s??'').replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';'),
+st=()=>({name:'شركتي',cur:'$',tax:0,pin:'',addr:'',phone:'',o1:0,...DB.s}),
+fx=(n,c)=>(+n||0).toLocaleString('en',{maximumFractionDigits:c=='$'?2:0})+' '+c,f=n=>fx(n,st().cur),
+sum=(a,g)=>a.reduce((s,x)=>s+g(x),0),today=()=>new Date().toISOString().slice(0,10),
+ld=o=>Object.assign({p:[],c:[],i:[],b:[],e:[],v:[],s:{}},o);
+let DB=ld(JSON.parse(localStorage.amin||'{}')),cur='dash',off=3100,fs,R={a:today().slice(0,8)+'01',z:today()};
+const save=()=>{localStorage.amin=JSON.stringify(DB);fs&&fs(DB)};
+let okS=1,sl=1,lastJ='',fa;
+const syn=(c,e)=>{const b=$('#sy');okS=c==1;b.className='tg '+(c==1?'ok':c==2?'wn':'no');b.textContent=c==1?'☁ متزامن':c==2?'⏳ جارٍ المزامنة…':'⚠ غير متزامن';if(c==0&&sl)toast(e=='permission-denied'?'هذا الحساب غير مصرّح له بالوصول للبيانات':'تعذّرت المزامنة مع السحابة — بياناتك محفوظة على هذا الجهاز',1);sl=c!=0};
+function login(){if($('#lg'))return;const d=document.createElement('div');d.id='lg';d.className='lk';d.innerHTML='<div class=md style="width:min(360px,92vw);text-align:center"><h3>🔐 تسجيل الدخول</h3><input id=le type=email dir=ltr placeholder="البريد الإلكتروني"><br><br><input id=lw type=password dir=ltr placeholder="كلمة المرور"><br><br><button class=b style="width:100%">دخول</button><p id=lm style="color:var(--no);margin-top:10px;min-height:20px"></p></div>';document.body.append(d);
+ const go2=async()=>{try{await fa.in($('#le').value.trim(),$('#lw').value)}catch(e){$('#lm').textContent=e.code=='auth/too-many-requests'?'محاولات كثيرة، حاول لاحقاً':'البريد أو كلمة المرور غير صحيحة'}};
+ d.querySelector('button').onclick=go2;$('#lw').onkeydown=e=>e.key=='Enter'&&go2()}
+const lout=()=>okS?ask('تسجيل الخروج؟ سيتم مسح النسخة المحلية من هذا الجهاز (بياناتك محفوظة بالسحابة).',()=>{localStorage.removeItem('amin');DB=ld({});lastJ='';go(cur);fa.out()}):toast('انتظر اكتمال المزامنة قبل الخروج',1);
+async function initFB(){if(!FB.projectId)return;$('#sy').style.display='block';syn(2);try{
+ const V='https://www.gstatic.com/firebasejs/10.12.2/',A=await import(V+'firebase-app.js'),F=await import(V+'firebase-firestore.js'),U=await import(V+'firebase-auth.js'),
+ app=A.initializeApp(FB),au=U.getAuth(app),r=F.doc(F.getFirestore(app),'erp','main');let un;
+ fa={in:(e,p)=>U.signInWithEmailAndPassword(au,e,p),out:()=>U.signOut(au)};
+ addEventListener('beforeunload',e=>{if(!okS){e.preventDefault();e.returnValue=''}});
+ U.onAuthStateChanged(au,u=>{if(un){un();un=0}
+  if(!u){fs=null;$('#lo').style.display='none';syn(2);login();return}
+  $('#lg')&&$('#lg').remove();$('#lo').style.display='block';
+  fs=x=>{lastJ=JSON.stringify(x);syn(2);return F.setDoc(r,{data:lastJ}).catch(e=>syn(0,e.code))};
+  un=F.onSnapshot(r,{includeMetadataChanges:true},s=>{const m=s.metadata;
+   if(s.exists()&&!m.hasPendingWrites&&!m.fromCache){const j=s.data().data;if(j!==lastJ){lastJ=j;DB=ld(JSON.parse(j));localStorage.amin=JSON.stringify(DB);go(cur)}}
+   else if(!s.exists()&&!m.fromCache)fs(DB);
+   syn(m.hasPendingWrites?2:m.fromCache?0:1)},e=>syn(0,e.code))})
+}catch(e){syn(0,e.code)}}
+
+/* ===== واجهة: إشعارات / تأكيد / نوافذ (بدون confirm/alert لأن بعض المتصفحات تحجبها) ===== */
+function toast(t,e){const d=document.createElement('div');d.className='ts'+(e?' er':'');d.textContent=t;document.body.append(d);setTimeout(()=>d.remove(),2800)}
+function modal(h){const m=document.createElement('div');m.className='ov';m.innerHTML='<div class=md>'+h+'</div>';m.onclick=e=>{if(e.target==m)m.remove()};document.body.append(m);ht(m);return m}
+document.addEventListener('keydown',e=>{if(e.key=='Escape'){const o=[...document.querySelectorAll('.ov')].pop();o&&o.remove()}});
+function ask(t,ok){const m=modal(`<h3>${t}</h3><div class=row><button class="b rd">نعم، تأكيد</button><button class="b g">إلغاء</button></div>`),[y,n]=m.querySelectorAll('button');n.onclick=()=>m.remove();y.onclick=()=>{m.remove();ok()}}
+function form(t,fl,v,ok){const m=modal(`<h3>${t}</h3>`+fl.map(([k,l,ty,o])=>`<label>${l}</label>`+(ty=='sel'?`<select name=${k}>${o.map(x=>`<option value="${x[0]}" ${v[k]==x[0]?'selected':''}>${x[1]}</option>`).join('')}</select>`:`<input name=${k} type=${ty||'text'} value="${esc(v[k])}" step=any>`)).join('')+'<div class=row><button class=b>حفظ</button><button class="b g">إلغاء</button></div>'),[s,c]=m.querySelectorAll('.row button');
+ c.onclick=()=>m.remove();s.onclick=()=>{const r={...v};m.querySelectorAll('[name]').forEach(e=>r[e.name]=e.type=='number'?+e.value:e.value);m.remove();ok(r)};m.onkeydown=e=>{if(e.key=='Enter'&&e.target.tagName=='INPUT')s.click()}}
+const T=(h,r)=>`<div class=tw><table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${r.join('')||'<tr><td colspan=9 class=em>لا توجد بيانات بعد</td></tr>'}</table></div>`;
+const get=(a,id)=>DB[a].find(x=>x.id==id)||{},nm=id=>(DB.c.find(c=>c.id==id)||{name:'نقدي'}).name;
+const up=(a,r)=>{r.id?DB[a]=DB[a].map(x=>x.id==r.id?r:x):DB[a].push({...r,id:uid()});save();go(cur);toast('تم الحفظ ✓')};
+const dl=(a,id)=>ask('تأكيد حذف هذا السجل؟',()=>{DB[a]=DB[a].filter(x=>x.id!=id);save();go(cur);toast('تم الحذف ✓')});
+const csv=(n,h,r)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+[h,...r].map(l=>l.map(c=>'"'+String(c??'').replace(/"/g,'""')+'"').join(',')).join('\n')],{type:'text/csv'}));a.download=n+'.csv';a.click()};
+
+/* ===== المخزون / الجهات / المصاريف ===== */
+const pr=q=>T(['الرمز','الصنف','التصنيف','الشراء','المبيع','الكمية','الحالة',''],DB.p.filter(p=>((p.name||'')+(p.code||'')+(p.cat||'')).includes(q)).map(p=>`<tr><td>${esc(p.code)}</td><td>${esc(p.name)}</td><td>${esc(p.cat)}</td><td>${f(p.cost)}</td><td>${f(p.price)}</td><td>${p.qty}</td><td><span class="tg ${p.qty<=0?'no':p.qty<=p.min?'wn':'ok'}">${p.qty<=0?'نفد':p.qty<=p.min?'منخفض':'متوفر'}</span></td><td><button class=ic onclick="pf('${p.id}')">✏️</button><button class=ic onclick="dl('p','${p.id}')">🗑</button></td></tr>`));
+const PF=[['name','اسم الصنف'],['code','الرمز / الباركود'],['cat','التصنيف'],['cost','سعر الشراء','number'],['price','سعر المبيع','number'],['qty','الكمية الحالية','number'],['min','حد إعادة الطلب','number']];
+const pf=id=>form(id?'تعديل صنف':'صنف جديد',PF,get('p',id),r=>r.name?up('p',r):toast('اكتب اسم الصنف',1));
+const cf=id=>form(id?'تعديل':'جهة جديدة',[['name','الاسم'],['phone','الهاتف'],['type','النوع','sel',[['c','عميل'],['s','مورد']]]],get('c',id),r=>r.name?up('c',r):toast('اكتب الاسم',1));
+const ef=()=>form('مصروف جديد',[['date','التاريخ','date'],['cat','الفئة','sel',['إيجار','رواتب','كهرباء ومياه','نقل','تسويق','أخرى'].map(x=>[x,x])],['note','البيان'],['amt','المبلغ','number']],{date:today()},r=>{if(!(r.amt>0))return toast('أدخل مبلغاً صحيحاً',1);up('e',r)});
+function stm(id){const c=get('c',id),k=c.type=='c'?'i':'b',L=DB[k].filter(x=>x.cid==id),V=DB.v.filter(v=>v.cid==id);modal(`<h3>كشف حساب — ${esc(c.name)}</h3>${T(['#','التاريخ','الإجمالي','المدفوع','المتبقي'],L.map(x=>`<tr><td>${x.no}</td><td>${x.date}</td><td>${f(x.total)}</td><td>${f(x.paid)}</td><td>${f(x.total-x.paid)}</td></tr>`))}${V.length?'<h3>السندات</h3>'+T(['#','التاريخ','النوع','المبلغ'],V.map(v=>`<tr><td>${v.no}</td><td>${v.date}</td><td>${v.t=='in'?'قبض':'صرف'}</td><td>${f(v.base)}${v.inv?' (مرتبط بفاتورة)':''}</td></tr>`)):''}<p class=tot>إجمالي المستحق: <b>${f(sum(L,x=>x.total-x.paid)-sum(V.filter(v=>!v.inv),v=>v.base))}</b></p><button class="b g" onclick="this.closest('.ov').remove()">إغلاق</button>`)}
+
+/* ===== الفواتير ===== */
+function inv(k,eid){const old=eid&&get(k,eid);if(old&&(old.rt||[]).length)return toast('لا يمكن تعديل فاتورة عليها مرتجعات',1);
+ const cs=DB.c.filter(c=>c.type==(k=='i'?'c':'s')),tx=old?+old.tax||0:+st().tax||0,m=modal(`<h3>${old?'تعديل الفاتورة #'+old.no:k=='i'?'فاتورة مبيع جديدة':'فاتورة شراء جديدة'}</h3><label>${k=='i'?'العميل':'المورد'}</label><select id=cid><option value="">نقدي</option>${cs.map(c=>`<option value=${c.id} ${old&&old.cid==c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select><label>التاريخ</label><input id=dt type=date value=${old?old.date:today()}><label>ملاحظات (اختياري)</label><input id=nt value="${esc(old?old.note:'')}"><label>الأصناف</label><div id=ln></div><div class=row><button class="b g" id=al>+ إضافة صنف</button><button class="b g" id=np>★ صنف جديد</button></div><div class=row><div><label>الخصم</label><input id=ds type=number step=any value=${old?old.disc||0:0}></div><div><label>المدفوع (فارغ = بالكامل)</label><input id=pd type=number step=any value="${old?old.paid:''}"></div></div><p class=tot>${tx?'ضريبة '+tx+'%<br>':''}الإجمالي: <b id=tt>0</b></p><div class=row><button class=b id=ok>حفظ الفاتورة</button><button class="b g" id=cn>إلغاء</button></div>`),Q=s=>m.querySelector(s),L=Q('#ln');
+ const sub=()=>sum([...L.children],d=>d.children[1].value*d.children[2].value),tot=()=>Math.max(0,sub()-(+Q('#ds').value||0))*(1+tx/100),rc=()=>Q('#tt').textContent=f(tot());
+ const po=()=>DB.p.map(p=>`<option value=${p.id}>${esc(p.name)} (${p.qty})</option>`).join('')+'<option value=__new>＋ صنف جديد…</option>';
+ const ad=(it)=>{const d=document.createElement('div');d.className='row';d.innerHTML=`<select>${po()}</select><input type=number value=1 min=0 step=any><input type=number step=any><button class=ic>✕</button>`;
+  let pv;const [s,q,p,x]=d.children,sp=()=>{if(s.value=='__new'){s.value=pv||(s.options[0]||{}).value;np(d);return}pv=s.value;const o=get('p',s.value);p.value=k=='i'?o.price:o.cost;rc()};s.onchange=sp;d.oninput=rc;x.onclick=()=>{d.remove();rc()};L.append(d);sp();if(it){s.value=it.pid;q.value=it.q;p.value=it.pr;rc()}};
+ const np=row=>form('صنف جديد',PF,{qty:0,min:0},r=>{if(!r.name)return toast('اكتب اسم الصنف',1);const o={...r,id:uid()};DB.p.push(o);save();[...L.children].forEach(d=>{const sl=d.children[0],v=sl.value;sl.innerHTML=po();sl.value=v});if(row&&row.isConnected){row.children[0].value=o.id;row.children[0].onchange()}else ad({pid:o.id,q:1,pr:k=='i'?o.price:o.cost});toast('تمت إضافة الصنف ✓')});Q('#np').onclick=()=>np();Q('#al').onclick=()=>ad();old?old.items.forEach(t=>ad(t)):DB.p.length?ad():np();Q('#ds').oninput=rc;Q('#cn').onclick=()=>m.remove();
+ const fin=it=>{if(old)old.items.forEach(t=>{const p=get('p',t.pid);if(p.id)p.qty+=k=='i'?t.q:-t.q});it.forEach(t=>{const p=get('p',t.pid);p.qty+=k=='i'?-t.q:t.q;if(k=='b')p.cost=t.pr});
+  const total=tot(),pd=Q('#pd').value;const o={date:Q('#dt').value||today(),note:Q('#nt').value,cid:Q('#cid').value,items:it,sub:sub(),disc:+Q('#ds').value||0,tax:tx,total,paid:pd===''?total:Math.min(+pd,total)};old?Object.assign(old,o):DB[k].push({id:uid(),no:DB[k].reduce((a,x)=>Math.max(a,x.no),0)+1,date:today(),ph:[],...o});save();m.remove();go(cur);toast(old?'تم تعديل الفاتورة ✓':'تم حفظ الفاتورة ✓')};
+ Q('#ok').onclick=()=>{const it=[...L.children].map(d=>{const p=get('p',d.children[0].value);return{pid:p.id,n:p.name,q:+d.children[1].value,pr:+d.children[2].value,co:p.cost}}).filter(t=>t.q>0&&t.pid);
+  if(!it.length)return toast('أضف صنفاً واحداً على الأقل',1);
+  const oq=pid=>old?sum(old.items.filter(t=>t.pid==pid),t=>t.q):0,bad=k=='i'&&it.find(t=>get('p',t.pid).qty+oq(t.pid)<t.q);bad?ask('الكمية غير كافية للصنف «'+esc(bad.n)+'» — متابعة؟',()=>fin(it)):fin(it)}}
+const di=(k,id)=>ask('حذف الفاتورة وإرجاع المخزون؟',()=>{get(k,id).items.forEach(t=>{const p=get('p',t.pid);if(p.id)p.qty+=k=='i'?t.q:-t.q});DB[k]=DB[k].filter(y=>y.id!=id);DB.v.forEach(v=>{if(v.inv==id)v.inv=''});save();go(cur);toast('تم حذف الفاتورة ✓')});
+const pay=(k,id)=>{const x=get(k,id),r=x.total-x.paid;form('تسجيل دفعة — المتبقي '+f(r),[['a','المبلغ','number']],{a:r},v=>{const a=Math.min(+v.a||0,r);if(a<=0)return toast('مبلغ غير صالح',1);x.paid+=a;(x.ph=x.ph||[]).push({d:today(),a});save();go(cur);toast('تم تسجيل الدفعة ✓')})};
+function ret(k,id){const x=get(k,id),m=modal(`<h3>${k=='i'?'مرتجع مبيع':'مرتجع شراء'} — فاتورة #${x.no}</h3>${T(['الصنف','المتاح للإرجاع','الكمية المرتجعة'],x.items.map((t,i)=>t.q>0?`<tr><td>${esc(t.n)}</td><td>${t.q}</td><td><input type=number min=0 max=${t.q} step=any value=0 data-i=${i} style="width:90px"></td></tr>`:''))}<div class=row><button class=b>تأكيد المرتجع</button><button class="b g">إلغاء</button></div>`),[ok,cn]=m.querySelectorAll('.row button');
+ cn.onclick=()=>m.remove();
+ ok.onclick=()=>{const rs=[...m.querySelectorAll('input')].map(e=>({t:x.items[e.dataset.i],r:Math.min(+e.value||0,x.items[e.dataset.i].q)})).filter(o=>o.r>0);
+  if(!rs.length)return toast('أدخل كمية مرتجعة',1);
+  const lack=k=='b'&&rs.find(o=>get('p',o.t.pid).qty<o.r);if(lack)return toast('مخزون «'+lack.t.n+'» لا يكفي لإرجاعه للمورد',1);
+  const ot=x.total,op=x.paid,os=sum(x.items,t=>t.q*t.pr);
+  rs.forEach(({t,r})=>{const p=get('p',t.pid);if(p.id)p.qty+=k=='i'?r:-r;t.q-=r;t.rq=(t.rq||0)+r});
+  const ns=sum(x.items,t=>t.q*t.pr);x.disc=os?(x.disc||0)*ns/os:0;x.sub=ns;x.total=Math.max(0,ns-x.disc)*(1+(+x.tax||0)/100);x.paid=Math.min(x.paid,x.total);
+  (x.rt=x.rt||[]).push({d:today(),items:rs.map(o=>({n:o.t.n,q:o.r})),amt:ot-x.total,ref:op-x.paid});save();m.remove();go(cur);toast('تم تسجيل المرتجع ✓')}}
+function vw(k,id){const x=get(k,id),s=st(),m=modal(`<h2>${esc(s.name)}</h2><small>${esc(s.addr)} ${esc(s.phone)}</small><h3 style="margin-top:12px">${k=='i'?'فاتورة مبيع':'فاتورة شراء'} #${x.no}</h3><p>${x.date} — ${esc(nm(x.cid))}</p>${x.note?'<p>ملاحظات: '+esc(x.note)+'</p>':''}${T(['الصنف','الكمية','السعر','المجموع'],x.items.map(t=>`<tr><td>${esc(t.n)}</td><td>${t.q}${t.rq?' <small>(مرتجع '+t.rq+')</small>':''}</td><td>${f(t.pr)}</td><td>${f(t.q*t.pr)}</td></tr>`))}${(x.rt||[]).length?'<h3>المرتجعات</h3>'+T(['التاريخ','الأصناف','القيمة','نقد مردود'],x.rt.map(r=>`<tr><td>${r.d}</td><td>${r.items.map(t=>esc(t.n)+' ×'+t.q).join('، ')}</td><td>${f(r.amt)}</td><td>${f(r.ref)}</td></tr>`)):''}<p class=tot>المجموع: ${f(x.sub??x.total)}${x.disc?' | خصم: '+f(x.disc):''}${x.tax?' | ضريبة '+x.tax+'%':''}<br>الإجمالي: <b>${f(x.total)}</b> | المدفوع: ${f(x.paid)} | المتبقي: <b>${f(x.total-x.paid)}</b></p><div class="row noprint"><button class=b>🖨 طباعة</button><button class="b g">إغلاق</button></div>`),[p,c]=m.querySelectorAll('.noprint button');
+ p.onclick=()=>{try{print()}catch(e){toast('الطباعة غير متاحة هنا',1)}};c.onclick=()=>m.remove()}
+const il=(k,q)=>T(['#','التاريخ','الجهة','الإجمالي','المدفوع','المتبقي','الحالة',''],[...DB[k]].reverse().filter(x=>(x.no+nm(x.cid)+x.date).includes(q)).map(x=>{const r=x.total-x.paid;return`<tr><td>${x.no}</td><td>${x.date}</td><td>${esc(nm(x.cid))}</td><td>${f(x.total)}</td><td>${f(x.paid)}</td><td>${f(r)}</td><td><span class="tg ${r<=0?'ok':x.paid>0?'wn':'no'}">${r<=0?'مدفوعة':x.paid>0?'جزئية':'غير مدفوعة'}</span>${(x.rt||[]).length?' <span class="tg wn">مرتجع</span>':''}</td><td><button class=ic title="عرض / طباعة" onclick="vw('${k}','${x.id}')">👁</button>${(x.rt||[]).length?'':`<button class=ic title="تعديل" onclick="inv('${k}','${x.id}')">✏️</button>`}${x.items.some(t=>t.q>0)?`<button class=ic title="مرتجع" onclick="ret('${k}','${x.id}')">↩️</button>`:''}${r>0?`<button class=ic title="تسجيل دفعة" onclick="pay('${k}','${x.id}')">💵</button>`:''}<button class=ic onclick="di('${k}','${x.id}')">🗑</button></td></tr>`}));
+const IL=k=>`<div class=top><h2>${k=='i'?'🧾 فواتير المبيع':'🛒 فواتير الشراء'}</h2><input placeholder="بحث برقم الفاتورة أو الاسم..." oninput="$('#it').innerHTML=il('${k}',this.value)"><button class=b onclick="inv('${k}')">+ فاتورة جديدة</button></div><div class=card id=it>${il(k,'')}</div>`;
+
+/* ===== التقارير والإعدادات ===== */
+const rp=()=>{const d=x=>x.date>=R.a&&x.date<=R.z,I=DB.i.filter(d),B=DB.b.filter(d),X=sum(DB.e.filter(d),e=>e.amt),S=sum(I,x=>x.total),C=sum(I,x=>sum(x.items,t=>t.co*t.q)),top={};
+ I.forEach(x=>x.items.forEach(t=>{const o=top[t.n]=top[t.n]||{q:0,v:0};o.q+=t.q;o.v+=t.q*t.pr}));
+ return`<div class=grid>${[['💰','المبيعات',S,'#7c6cff'],['📦','تكلفة البضاعة',C,'#fbbf24'],['📈','مجمل الربح',S-C,'#2dd4bf'],['💸','المصاريف',X,'#fb7185'],['🏆','صافي الربح',S-C-X,'#22d3ee'],['🛒','المشتريات',sum(B,x=>x.total),'#a78bfa']].map(([i,l,v,c])=>`<div class="card st" style="--c:${c}"><span>${i}</span><small>${l}</small><b data-n=${v}>0</b></div>`).join('')}</div><div class=card><h3>الأصناف الأكثر مبيعاً</h3>${T(['الصنف','الكمية','القيمة'],Object.entries(top).sort((a,b)=>b[1].v-a[1].v).slice(0,8).map(([n,o])=>`<tr><td>${esc(n)}</td><td>${o.q}</td><td>${f(o.v)}</td></tr>`))}</div>`};
+const ss=()=>{const s=st();['name','addr','phone','tax','o1','pin'].forEach(k=>s[k]=$('#s_'+k).value);['tax','o1'].forEach(k=>s[k]=+s[k]||0);DB.s=s;save();go('set');toast('تم حفظ الإعدادات ✓')};
+const th=v=>{localStorage.th=v;document.documentElement.dataset.theme=v;cur=='set'&&go('set')},tg=()=>th(document.documentElement.dataset.theme=='dark'?'light':'dark'),
+sc=c=>{DB.s={...st(),cur:c};save();go('set');toast('تم اختيار العملة ✓')},cl=()=>{document.body.classList.toggle('col');localStorage.sc=document.body.classList.contains('col')?1:''},mn=o=>document.body.classList.toggle('mo',o),fab=o=>$('#fab').classList.toggle('open',o);
+const imp=fl=>{if(!fl)return;const r=new FileReader();r.onload=()=>{let d;try{d=ld(JSON.parse(r.result))}catch(e){return toast('ملف غير صالح',1)}
+ const mg=()=>{const pm={};let n=0;
+  d.p.forEach(p=>{const e=DB.p.find(x=>x.id==p.id||x.name==p.name);if(e)pm[p.id]=e.id;else{DB.p.push(p);pm[p.id]=p.id}});
+  d.c.forEach(c=>{if(!DB.c.some(x=>x.id==c.id))DB.c.push(c)});
+  const off=d.i.some(x=>DB.i.some(y=>y.no==x.no&&y.id!=x.id))?DB.i.reduce((a,x)=>Math.max(a,x.no),0):0;
+  d.i.forEach(x=>{if(DB.i.some(y=>y.id==x.id))return;x.items.forEach(t=>{t.pid=pm[t.pid]||t.pid});if(off){x.note=((x.note||'')+' رقم الفاتورة بالملف الأصلي: '+x.no).trim();x.no+=off}DB.i.push(x);n++});
+  ['b','e','v'].forEach(k=>d[k].forEach(x=>{if(!DB[k].some(y=>y.id==x.id))DB[k].push(x)}));
+  save();go('dash');toast('تم الدمج ✓ — أُضيفت '+n+' فاتورة مبيع جديدة')};
+ if(d._import)return mg();
+ const m=modal(`<h3>كيف تريد استرجاع الملف؟</h3><p style="color:var(--mu)">الدمج بيضيف بيانات الملف لبياناتك الحالية بدون ما يمسح شي. الاستبدال بيمسح كل بياناتك الحالية.</p><div class=row><button class=b>دمج مع بياناتي</button><button class="b rd">استبدال الكل</button></div>`);
+ m.querySelectorAll('button').forEach((b,i)=>b.onclick=()=>{m.remove();if(!i)mg();else{DB=d;save();go('dash');toast('تم استرجاع النسخة ✓')}})};
+ r.readAsText(fl)};
+const bk=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(DB)]));a.download='backup-'+today()+'.json';a.click()};
+const rst=()=>ask('سيتم مسح كل البيانات نهائياً. متأكد؟',()=>{DB=ld({s:DB.s});save();go('dash');toast('تم المسح')});
+function lock(){const p=st().pin;if(!p)return;const d=document.createElement('div');d.className='lk';d.innerHTML='<div class=md style="text-align:center;width:300px"><h3>🔒 '+esc(st().name)+'</h3><input type=password placeholder="رمز الدخول"><br><br><button class=b>دخول</button></div>';document.body.append(d);
+ const i=d.querySelector('input'),g=()=>i.value==p?d.remove():toast('الرمز غير صحيح',1);d.querySelector('button').onclick=g;i.onkeydown=e=>e.key=='Enter'&&g()}
+
+/* ===== الصندوق والسندات ===== */
+const vs=(t,c)=>sum(DB.v.filter(v=>v.t==t&&!v.inv&&(c?v.cid==c:v.cid)),v=>v.base);
+const cash=()=>{const s=st(),V=t=>sum(DB.v.filter(v=>v.t==t),v=>v.base),W=t=>sum(DB.v.filter(v=>v.t==t&&v.inv),v=>v.base),
+ r=[['رصيد افتتاحي',+s.o1||0],['مقبوض من فواتير المبيع',sum(DB.i,x=>x.paid)-W('in')],['مدفوع لفواتير الشراء',W('out')-sum(DB.b,x=>x.paid)],['المصاريف',-sum(DB.e,e=>e.amt)],['سندات قبض',V('in')],['سندات صرف',-V('out')]];
+ return{r,a:sum(r,x=>x[1])}};
+function vf(t){const k=t=='in'?'i':'b',pl=DB.c.filter(c=>c.type==(t=='in'?'c':'s')),
+ m=modal(`<h3>${t=='in'?'سند قبض':'سند صرف'}</h3><label>التاريخ</label><input id=vd type=date value=${today()}><label>${t=='in'?'من العميل':'إلى المورد'}</label><select id=vc><option value="">— بدون جهة —</option>${pl.map(c=>`<option value=${c.id}>${esc(c.name)}</option>`).join('')}</select><label>ربط بفاتورة (اختياري)</label><select id=vi></select><label>المبلغ</label><input id=va type=number step=any><label>البيان</label><input id=vn><div class=row><button class=b>حفظ السند</button><button class="b g">إلغاء</button></div>`),Q=x=>m.querySelector(x),
+ oi=()=>{Q('#vi').innerHTML='<option value="">— بدون ربط —</option>'+DB[k].filter(x=>x.cid==Q('#vc').value&&x.total-x.paid>.0001).map(x=>`<option value=${x.id}>#${x.no} — متبقي ${f(x.total-x.paid)}</option>`).join('')};
+ Q('#vc').onchange=oi;oi();const[sv,cn]=m.querySelectorAll('.row button');cn.onclick=()=>m.remove();
+ sv.onclick=()=>{const am=+Q('#va').value;if(!(am>0))return toast('أدخل مبلغاً صحيحاً',1);
+  const iv=Q('#vi').value,x=iv&&get(k,iv);if(x&&am>x.total-x.paid+.01)return toast('المبلغ أكبر من المتبقي على الفاتورة',1);
+  if(x){x.paid=Math.min(x.total,x.paid+am);(x.ph=x.ph||[]).push({d:today(),a:am})}
+  DB.v.push({id:uid(),no:DB.v.filter(v=>v.t==t).reduce((a,v)=>Math.max(a,v.no),0)+1,t,date:Q('#vd').value,cid:Q('#vc').value,inv:iv,am,base:am,note:Q('#vn').value});save();m.remove();go(cur);toast('تم حفظ السند ✓')}}
+const dv=id=>ask('حذف السند؟',()=>{const v=get('v',id),x=v.inv&&get(v.t=='in'?'i':'b',v.inv);if(x&&x.id)x.paid=Math.max(0,x.paid-v.base);DB.v=DB.v.filter(y=>y.id!=id);save();go(cur);toast('تم حذف السند ✓')});
+function vv(id){const v=get('v',id),s=st(),m=modal(`<h2>${esc(s.name)}</h2><small>${esc(s.addr)} ${esc(s.phone)}</small><h3 style="margin-top:12px">${v.t=='in'?'سند قبض':'سند صرف'} #${v.no}</h3><p>${v.date}</p><p class=tot>${v.t=='in'?'استلمنا من':'دفعنا إلى'}: <b>${v.cid?esc(nm(v.cid)):'—'}</b><br>المبلغ: <b>${f(v.base)}</b><br>البيان: ${esc(v.note)}${v.inv?'<br>عن فاتورة رقم '+(get(v.t=='in'?'i':'b',v.inv).no||''):''}</p><br><p>التوقيع: ____________</p><div class="row noprint"><button class=b>🖨 طباعة</button><button class="b g">إغلاق</button></div>`),[p,c]=m.querySelectorAll('.noprint button');
+ p.onclick=()=>{try{print()}catch(e){toast('الطباعة غير متاحة هنا',1)}};c.onclick=()=>m.remove()}
+
+/* ===== الصفحات ===== */
+const P={
+dash:()=>{const S=sum(DB.i,x=>x.total),E=sum(DB.e,x=>x.amt),G=sum(DB.i,x=>sum(x.items,t=>(t.pr-t.co)*t.q))-E,
+ cs=[['💰','المبيعات',S,'sale','#7c6cff'],['🛒','المشتريات',sum(DB.b,x=>x.total),'buy','#a78bfa'],['💸','المصاريف',E,'exp','#fb7185'],['📈','صافي الربح',G,'rep','#2dd4bf'],['🏬','قيمة المخزون',sum(DB.p,p=>p.qty*p.cost),'prod','#22d3ee'],['⏳','ذمم العملاء',sum(DB.i,x=>x.total-x.paid)-vs('in'),'sale','#fbbf24'],['📤','ذمم الموردين',sum(DB.b,x=>x.total-x.paid)-vs('out'),'buy','#f472b6'],['🏦','رصيد الصندوق',cash().a,'cash','#34d399']],
+ days=[...Array(7)].map((_,i)=>{const d=new Date(Date.now()-(6-i)*864e5).toISOString().slice(0,10);return[d.slice(5),sum(DB.i.filter(x=>x.date==d),x=>x.total)]}),mx=Math.max(1,...days.map(d=>d[1]));
+ return`<div class=top><h2>لوحة التحكم</h2></div>${DB.p.length?'':`<div class=card><h3>👋 ابدأ من هنا</h3><div class=row style="flex-wrap:wrap"><button class=b onclick="pf()">1) أضف أول صنف</button><button class="b g" onclick="cf()">2) أضف عميلاً أو مورداً</button><button class="b g" onclick="inv('i')">3) أنشئ فاتورة</button></div></div>`}<div class=row style="flex-wrap:wrap"><button class=b onclick="inv('i')">+ فاتورة مبيع</button><button class=b onclick="inv('b')">+ فاتورة شراء</button><button class="b g" onclick="pf()">+ صنف</button><button class="b g" onclick="ef()">+ مصروف</button></div>
+ <div class=grid>${cs.map(([i,l,v,p,c])=>`<div class="card st" style="--c:${c}" onclick="go('${p}')"><span>${i}</span><small>${l}</small><b data-n=${v}>0</b></div>`).join('')}</div>
+ <div class=card><h3>مبيعات آخر 7 أيام</h3><div class=ch>${days.map(([d,v])=>`<div title="${f(v)}"><i style="height:${v/mx*85}%"></i><small>${d}</small></div>`).join('')}</div></div>
+ <div class=card><h3>آخر فواتير المبيع</h3>${T(['#','التاريخ','العميل','الإجمالي'],DB.i.slice(-5).reverse().map(x=>`<tr><td>${x.no}</td><td>${x.date}</td><td>${esc(nm(x.cid))}</td><td>${f(x.total)}</td></tr>`))}</div>
+ <div class=card><h3>أصناف قاربت على النفاد</h3>${T(['الصنف','الكمية','الحد'],DB.p.filter(p=>p.qty<=p.min).map(p=>`<tr><td>${esc(p.name)}</td><td><span class="tg no">${p.qty}</span></td><td>${p.min}</td></tr>`))}</div>`},
+prod:()=>`<div class=top><h2>📦 المخزون</h2><input placeholder="بحث بالاسم أو الرمز أو التصنيف..." oninput="$('#pt').innerHTML=pr(this.value)"><button class=b onclick="pf()">+ صنف جديد</button></div><div class=card id=pt>${pr('')}</div>`,
+sale:()=>IL('i'),buy:()=>IL('b'),
+cont:()=>`<div class=top><h2>👥 العملاء والموردين</h2><button class=b onclick="cf()">+ جهة جديدة</button></div><div class=card>${T(['الاسم','الهاتف','النوع','الرصيد المستحق',''],DB.c.map(c=>{const k=c.type=='c'?'i':'b',bal=sum(DB[k].filter(x=>x.cid==c.id),x=>x.total-x.paid)-vs(c.type=='c'?'in':'out',c.id);return`<tr><td>${esc(c.name)}</td><td>${esc(c.phone)}</td><td>${c.type=='c'?'عميل':'مورد'}</td><td><span class="tg ${bal>0?'no':'ok'}">${f(bal)}</span></td><td><button class=ic title="كشف حساب" onclick="stm('${c.id}')">📄</button><button class=ic onclick="cf('${c.id}')">✏️</button><button class=ic onclick="dl('c','${c.id}')">🗑</button></td></tr>`}))}</div>`,
+cash:()=>{const c=cash();return`<div class=top><h2>🏦 الصندوق والسندات</h2><div class=row style="max-width:340px"><button class=b onclick="vf('in')">+ سند قبض</button><button class="b rd" onclick="vf('out')">+ سند صرف</button></div></div>
+ <div class=grid><div class="card st" style="--c:#34d399"><span>💵</span><small>رصيد الصندوق</small><b data-n=${c.a}>0</b></div></div>
+ <div class=card><h3>تفاصيل الصندوق</h3>${T(['البند','المبلغ'],c.r.map(([l,v])=>`<tr><td>${l}</td><td>${f(v)}</td></tr>`))}</div>
+ <div class=card><h3>سجل السندات</h3>${T(['#','التاريخ','النوع','الجهة','البيان','المبلغ',''],[...DB.v].reverse().map(v=>`<tr><td>${v.no}</td><td>${v.date}</td><td><span class="tg ${v.t=='in'?'ok':'no'}">${v.t=='in'?'قبض':'صرف'}</span></td><td>${v.cid?esc(nm(v.cid)):'—'}</td><td>${esc(v.note)}</td><td>${f(v.base)}</td><td><button class=ic onclick="vv('${v.id}')">👁</button><button class=ic onclick="dv('${v.id}')">🗑</button></td></tr>`))}</div>`},
+exp:()=>`<div class=top><h2>💸 المصاريف</h2><button class=b onclick="ef()">+ مصروف جديد</button></div><div class=card>${T(['التاريخ','الفئة','البيان','المبلغ',''],[...DB.e].reverse().map(e=>`<tr><td>${e.date}</td><td>${esc(e.cat)}</td><td>${esc(e.note)}</td><td>${f(e.amt)}</td><td><button class=ic onclick="dl('e','${e.id}')">🗑</button></td></tr>`))}</div>`,
+rep:()=>`<div class=top><h2>📑 التقارير</h2><div class=row style="max-width:420px"><input type=date value=${R.a} oninput="R.a=this.value;$('#rp').innerHTML=rp();cu()"><input type=date value=${R.z} oninput="R.z=this.value;$('#rp').innerHTML=rp();cu()"></div></div><div id=rp>${rp()}</div>
+ <div class=row><button class="b g" onclick="csv('products',['الرمز','الصنف','التصنيف','الشراء','المبيع','الكمية'],DB.p.map(p=>[p.code,p.name,p.cat,p.cost,p.price,p.qty]))">⬇ تصدير المخزون CSV</button><button class="b g" onclick="csv('sales',['#','التاريخ','العميل','الإجمالي','المدفوع'],DB.i.map(x=>[x.no,x.date,nm(x.cid),x.total,x.paid]))">⬇ تصدير المبيعات CSV</button></div>`,
+set:()=>{const s=st(),tm=document.documentElement.dataset.theme,sg=(a,v,fn)=>`<div class=seg>${a.map(([k,l])=>`<button class="${v==k?'on':''}" onclick="${fn}('${k}')">${l}</button>`).join('')}</div>`;return`<div class=top><h2>⚙️ الإعدادات</h2></div>
+ <div class=card style="max-width:560px"><h3>المظهر</h3>${sg([['light','☀️ فاتح'],['dark','🌙 داكن']],tm,'th')}</div>
+ <div class=card style="max-width:560px"><h3>العملة</h3>${sg([['$','$ دولار'],['ل.س','ل.س ليرة سورية']],s.cur,'sc')}<p style="color:var(--mu);font-size:13px">تغيير العملة يغيّر الرمز فقط ولا يحوّل المبالغ المخزّنة.</p></div>
+ <div class=card style="max-width:560px"><h3>بيانات الشركة</h3>${[['name','اسم الشركة'],['addr','العنوان'],['phone','الهاتف'],['tax','نسبة الضريبة %','number'],['o1','رصيد الصندوق الافتتاحي','number'],['pin','رمز قفل الدخول (اختياري)','password']].map(([k,l,t])=>`<label>${l}</label><input id=s_${k} type=${t||'text'} value="${esc(s[k])}" step=any>`).join('')}<div class=row><button class=b onclick="ss()">حفظ الإعدادات</button></div></div>
+ <div class=card style="max-width:560px"><h3>الحساب والبيانات</h3><div class=row style="flex-wrap:wrap"><button class="b g" onclick="bk()">⬇ نسخة احتياطية</button><button class="b g" onclick="$('#rs').click()">⬆ استرجاع</button><button class="b rd" onclick="rst()">مسح الكل</button>${FB.projectId?'<button class="b g" onclick="lout()">تسجيل الخروج</button>':''}</div><input id=rs type=file accept=.json hidden onchange="imp(this.files[0])"></div>`}};
+const N=[['dash','📊','لوحة التحكم'],['prod','📦','المخزون'],['inv','🧾','الفواتير'],['cont','👥','العملاء والموردين'],['fin','🏦','الصندوق والمصاريف'],['rep','📑','التقارير'],['set','⚙️','الإعدادات']];
+function cu(){document.querySelectorAll('[data-n]').forEach(e=>{const t=+e.dataset.n,s=performance.now()+off;(function t0(n){const k=Math.max(0,Math.min((n-s)/900,1));e.textContent=f(t*(1-Math.pow(1-k,3)));k<1&&requestAnimationFrame(t0)})(s)})}
+const G={sale:'inv',buy:'inv',cash:'fin',exp:'fin'},SB={inv:'sale',fin:'cash'},
+seg=(g,o)=>`<div class=seg>${o.map(([k,l])=>`<button class="${SB[g]==k?'on':''}" onclick="go('${k}')">${l}</button>`).join('')}</div>`,
+ht=r=>r.querySelectorAll('.ic').forEach(b=>{if(!b.title)b.title={'✏️':'تعديل','🗑':'حذف','👁':'عرض / طباعة','💵':'تسجيل دفعة','↩️':'مرتجع','📄':'كشف حساب','✕':'إزالة'}[b.textContent.trim()]||''});
+P.inv=()=>seg('inv',[['sale','🧾 المبيعات'],['buy','🛒 المشتريات']])+P[SB.inv]();
+P.fin=()=>seg('fin',[['cash','🏦 الصندوق والسندات'],['exp','💸 المصاريف']])+P[SB.fin]();
+function go(p){if(G[p]){SB[G[p]]=p;p=G[p]}cur=p;mn(0);$('#bn').textContent=st().name;$('#main').innerHTML=P[p]();$('#pt2').textContent=(N.find(n=>n[0]==p)||[])[2]||'';document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.p==p));document.querySelectorAll('#main>.card').forEach((c,i)=>c.style.animationDelay=(off+i*70)+'ms');ht(document);cu()}
+$('#nav').innerHTML=N.map(([p,i,l],k)=>`<button data-p=${p} title="${l}" style="animation-delay:${3.1+k*.07}s" onclick="go('${p}')">${i} <span class=lb>${l}</span></button>`).join('');
+if(localStorage.sc)document.body.classList.add('col');
+$('#fm').innerHTML=[['🧾 فاتورة مبيع',"inv('i')"],['🛒 فاتورة شراء',"inv('b')"],['⬇ سند قبض',"vf('in')"],['⬆ سند صرف',"vf('out')"],['📦 صنف جديد',"pf()"],['💸 مصروف',"ef()"]].map(([l,a])=>`<button class="b g" onclick="fab(0);${a}">${l}</button>`).join('');
+go('dash');off=0;initFB();lock();
+(()=>{const e=$('#pc'),M=['تجهيز الحسابات…','تحميل المخزون…','مزامنة الفواتير…','جاهز ✓'],s0=performance.now();(function t(n){const k=Math.min((n-s0)/2600,1);e.textContent=M[Math.min(3,k*4|0)]+'  '+Math.round(k*100)+'%';k<1&&requestAnimationFrame(t)})(s0)})();
+</script></body></html>
