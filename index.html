@@ -241,4 +241,21 @@ $('#fm').innerHTML=[['🧾 فاتورة مبيع',"inv('i')"],['🛒 فاتور�
 go('dash');off=0;initFB();lock();
 (()=>{const e=$('#pc'),M=['تجهيز الحسابات…','تحميل المخزون…','مزامنة الفواتير…','جاهز ✓'],s0=performance.now();(function t(n){const k=Math.min((n-s0)/2600,1);e.textContent=M[Math.min(3,k*4|0)]+'  '+Math.round(k*100)+'%';k<1&&requestAnimationFrame(t)})(s0)})();
 </script>
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDhyN2uFVX3DD7B7-ntp0Gspv_PN-RbIU",
+    authDomain: "alameen-mbj.firebaseapp.com",
+    projectId: "alameen-mbj",
+    storageBucket: "alameen-mbj.appspot.com",
+    messagingSenderId: "587399748810",
+    appId: "1:587399748810:web:f49f43b0bcba3edf1a6833",
+    measurementId: "G-67FBXE1EYR"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body></html>
